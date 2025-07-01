@@ -111,3 +111,32 @@ export interface InsightData {
   actionable: boolean;
   timestamp: Date;
 }
+
+// Add these to your existing types
+export interface WebsiteMetrics {
+  visitors: MetricData;
+  revenue: MetricData;
+  conversions: MetricData;
+  bounceRate: MetricData;
+}
+
+export interface ChartData {
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    borderColor: string;
+    backgroundColor: string;
+    tension: number;
+  }[];
+}
+
+export interface RealtimeEvent {
+  type: string;
+  data: {
+    metric: string;
+    value: number;
+    timestamp: Date;
+  };
+  timestamp: Date;
+}
