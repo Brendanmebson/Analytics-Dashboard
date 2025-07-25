@@ -1,74 +1,151 @@
-<<<<<<< HEAD
-# Analytics-Dashboard
-A Real-time Analytics Dashboard
-=======
-# React + TypeScript + Vite
+# ⚡ PulseBoard – Real-Time Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**PulseBoard** is a sleek, high-performance real-time analytics dashboard built with modern web technologies.  
+It leverages **WebSockets** to deliver lightning-fast data updates and visualizes them using **Chart.js**, all wrapped in a beautiful UI powered by **React + TypeScript + Vite**.
 
-Currently, two official plugins are available:
+> Stay in sync with your data’s pulse. No refresh required.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📡 **Real-Time Data Streaming**
+  - Seamless updates via WebSocket connection
+- 📈 **Dynamic Charting**
+  - Line, bar, pie, and custom charts with live updates using Chart.js
+- 🎛️ **Interactive Dashboard**
+  - Toggle views, filter data, switch chart types on the fly
+- 🧠 **Type-Safe Codebase**
+  - Built in TypeScript for rock-solid reliability
+- ⚡ **Blazing Fast Build**
+  - Powered by Vite for near-instant dev server start and HMR
+- 🌙 **Dark Mode Ready**
+  - Responsive and theme-aware design
+- 🧩 **Modular & Extensible**
+  - Easily integrate new widgets, data types, or external APIs
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🧰 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Layer         | Tech                         |
+|---------------|------------------------------|
+| **Frontend**  | React + TypeScript + Vite    |
+| **Charts**    | Chart.js + `react-chartjs-2` |
+| **Live Data** | WebSockets (Native / `ws`)   |
+| **Server**    | Node.js (Express or custom ws server) |
+| **Styling**   | Tailwind CSS / CSS Modules   |
+
+---
+
+## 📁 Folder Structure
+```
+pulseboard/
+├── client/ # Frontend (React + Vite)
+│ ├── src/
+│ │ ├── components/ # Charts, widgets, controls
+│ │ ├── services/ # WebSocket client, API utils
+│ │ ├── context/ # Global state management
+│ │ └── App.tsx # Root component
+│ └── vite.config.ts
+├── server/ # Backend (Node.js + WebSockets)
+│ ├── index.js # WebSocket server
+│ └── mockData.js # Simulated data stream
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ⚙️ Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (18+ recommended)
+- npm or yarn
+
+### 1. Clone the Repo
+
 ```
->>>>>>> 512b9d6 (Initial commit)
+git clone https://github.com/yourusername/pulseboard.git
+cd pulseboard
+```
+### 2. Install Dependencies
+# Install client dependencies
+```
+cd client
+npm install
+```
+# Install server dependencies
+```
+cd ../server
+npm install
+```
+### 3. Start the Server
+```
+cd server
+node index.js
+```
+Default server runs on ws://localhost:4000
+
+### 4. Start the Frontend
+```
+cd ../client
+npm run dev
+```
+Frontend runs on http://localhost:5173
+
+## 🧪 Simulated Data Streams
+The backend server uses a mock generator to emit sample data every few seconds. You can modify mockData.js to simulate different types of real-time data such as:
+
+- Active users
+
+- Revenue flow
+
+- App crashes
+
+- API response time
+
+- Sensor input (IoT, etc.)
+
+## 📊 Screenshots
+(Add screenshots of live charts and dashboard layout here if you’ve got them!)
+
+## 📡 WebSocket Payload Example
+```
+{
+  "metric": "active_users",
+  "value": 842,
+  "timestamp": "2025-07-23T15:34:22Z"
+}
+```
+## 📦 Built With
+- react-chartjs-2
+
+- chart.js
+
+- vite
+
+- ws
+
+- tailwindcss
+
+##  Future Plans
+- ⏱ Historical analytics with time-range filtering
+
+- 📁 CSV/JSON export
+
+- 🔔 Threshold-based alerts
+
+- 📲 Mobile-responsive dashboard
+
+- 🔐 Auth & role-based access (admin/viewer)
+
+- 📈 Custom chart builder wizard
+
+## 👨‍💻 Author
+Brendan Mebuge Kamsiyochukwu
+📬 brendanmebson@gmail.com
+
+## 💬 Feedback
+Got suggestions or found a bug?
+Open an issue or shoot me an email — I’d love to hear from you!
+
+PulseBoard – because waiting for data is so last decade. 🚀
